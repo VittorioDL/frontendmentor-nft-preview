@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+/*---------- CSS RESET -----------*/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+body, html{
+  height: 100%;
+  width: 100%;
+}
+
+/* GLOBAL VARIABLES */
+:root{
+  /* LEGEND
+     clr = color
+     vdb = very dark blue 
+     pr = primary color
+     ne = neutral color
+     fw = font weight*/
+
+  --clr-pr-soft-blue: hsl(215, 51%, 70%);
+  --clr-pr-cyan: hsl(178, 100%, 50%);
+  
+  --clr-ne-vdb-mainbg: hsl(217, 54%, 11%);
+  --clr-ne-vdb-cardbg: hsl(216, 50%, 16%);
+  --clr-ne-vdb-line: hsl(215, 32%, 27%);
+  --clr-ne-white: hsl(0, 0%, 100%);
+
+  --font-size-p: 18px;
+  --font-family: 'Outfit', sans-serif;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-semibold: 600;
+}
+
+body {
+  background-color: var(--clr-ne-vdb-mainbg);
+  font-family: var(--font-family);
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.card {
+  background-color: var(--clr-ne-vdb-cardbg);
+  border-radius: 15px;
+  padding: 2rem;
+  max-width: 420px;
+  box-shadow: 0px 0px 15px 25px hsla(218, 53%, 10%, 0.848);
+}
+
+.main-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  vertical-align: middle;
+  margin-bottom: 1rem;
+}
+
+.description {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.description h1 {
+  font-size: 1.7rem;;
+  font-weight: var(--fw-semibold);
+  color: var(--clr-ne-white);
+}
+.description p {
+  font-size: var(--font-size-p);
+  font-weight: var(--fw-light);
+  color: var(--clr-pr-soft-blue);
+  
+}
+
+/* ------------CRYPTO AND DAYS LEFT--------- */
+.info {
+  display: flex;
+  justify-content: space-between;
+}
+.crypto p, 
+.days-left p,
+.crypto img, 
+.days-left img {
+  display: inline;
+  vertical-align: middle;
+  margin-right: 0.3rem;
+}
+.crypto-value{
+  font-weight: var(--fw-semibold);
+  color: var(--clr-pr-cyan);
+}
+.days-value {
+  font-weight: var(--fw-regular);
+  color: var(--clr-pr-soft-blue);
+}
+
+/* SEPARATOR */
+hr {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: none;
+  height: 1px;
+  background-color: rgba(220, 220, 220, 0.158);
+}
+
+/* ------------CREATED BY--------- */
+.made-by {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+}
+.made-by img {
+  width: 2rem;
+  border: 1px solid rgb(220, 220, 220);
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+.made-by p {
+  font-weight: var(--fw-light);
+  color: var(--clr-pr-soft-blue);
+}
+.creator-accent {
+  color: var(--clr-ne-white);
+  font-weight: var(--fw-light);
+}
+
+/* HOVER STATE */
+.creator-accent:hover{
+  color: cyan;
+  cursor: pointer;
+}
+h1:hover{
+  color: cyan;
+  cursor: pointer;
+}
+.image:hover .overlay{
+  display: inline;
+  cursor: pointer;
+  opacity: 0.5;
+}
+.image{
+  position: relative;
+}
+ .eye-image{
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+} 
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .3s ease;
+  background-color: hsla(178, 100%, 40%)
+}
+
+
+/* MEDIA QUERY */
+ @media screen and (max-width: 747px) {
+    .card {
+      width: 70%;
+    }
+  
+} 
